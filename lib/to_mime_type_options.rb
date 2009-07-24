@@ -15,7 +15,7 @@ module ToMimeTypeOptions
         end
 
         def self.get_to_#{type}_options
-          read_inheritable_attribute :to_#{type}_options
+          read_inheritable_attribute(:to_#{type}_options) || {}
         end
       EndEval
       base.alias_method_chain "to_#{type}".to_sym, :mime_type_options
